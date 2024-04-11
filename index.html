@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading-container">
+        <h1>Task Manager</h1>
+        <div class="filter-container">
+          <label for="category-filter">Filter by Category:</label>
+          <select id="category-filter">
+            <option value="all">All</option>
+            <option value="work">Work</option>
+            <option value="personal work">Personal Work</option>
+          </select>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="task-table-container">
+          <h2>Tasks</h2>
+          <table class="task-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Sub Category</th>
+                <th>Duration</th>
+                <th>Tasks</th>
+                <th colspan="2">Edit</th>
+              </tr>
+            </thead>
+            <tbody id="tasktable"></tbody>
+          </table>
+        </div>
+        <div class="form-container">
+          <h2>Add Task</h2>
+          <form method="get">
+            <label for="category">Category:</label>
+            <select id="category">
+              <option value="Work">Work</option>
+              <option value="Personal work">Personal Work</option>
+            </select>
+            <label for="subcategory">Sub Category:</label>
+            <input type="text" id="subcategory" />
+            <label for="task">Task:</label>
+            <input type="text" id="task" />
+          </form>
+          <p>Duration:</p>
+          <div id="duration">
+            <span id="timerDisplay">00:00:00</span>
+            <button id="startStopButton" onclick="startstop()">Start</button>
+            <button onclick="reset()">Reset</button>
+          </div>
+          <br />
+          <button type="button" id="addUpdateButton" onclick="addTask()">
+            Add Task
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="taskmanager.js"></script>
+  </body>
+</html>

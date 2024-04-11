@@ -33,7 +33,7 @@ loginForm.addEventListener("submit", async function (event) {
   try {
     var user = await Login(email, password);
     if (user) {
-      window.location.href = "/index.html";
+      window.location.href = "/task.html";
     }
     console.log("Login successful", user);
   } catch (error) {
